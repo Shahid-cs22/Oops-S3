@@ -1,32 +1,88 @@
-public class SelectionSortExample {  
-    public static void selectionSort(int[] arr){  
-        for (int i = 0; i < arr.length - 1; i++)  
-        {  
-            int index = i;  
-            for (int j = i + 1; j < arr.length; j++){  
-                if (arr[j] < arr[index]){  
-                    index = j;//searching for lowest index  
-                }  
-            }  
-            int smallerNumber = arr[index];   
-            arr[index] = arr[i];  
-            arr[i] = smallerNumber;  
-        }  
-    }  
-       
-    public static void main(String a[]){  
-       int[] arr1 = {9,14,3,2,43,11,58,22};  
-        System.out.println("Before Selection Sort");  
-        for(int i:arr1){  
-            System.out.print(i+" ");  
-        }  
-        System.out.println();  
-          
-        selectionSort(arr1);//sorting array using selection sort  
-         
-        System.out.println("After Selection Sort");  
-        for(int i:arr1){  
-            System.out.print(i+" ");  
-        }  
-    }  
+Import java.util.Scanner;
+
+
+
+Public class SelectionSort {
+
+    Public static void main(String[] args) {
+
+        Scanner scanner = new Scanner(System.in);
+
+
+
+        System.out.print(“Enter the size of the array: “);
+
+        Int size = scanner.nextInt();
+
+        Int[] array = new int[size];
+
+
+
+        System.out.println(“Enter the elements of the array:”);
+
+        For (int i = 0; i < size; i++) {
+
+            Array[i] = scanner.nextInt();
+
+        }
+
+
+
+        selectionSort(array);
+
+
+
+        System.out.println(“Sorted array:”);
+
+        For (int num : array) {
+
+            System.out.print(num + “ “);
+
+        }
+
+
+
+        Scanner.close();
+
+    }
+
+
+
+    Public static void selectionSort(int[] array) {
+
+        Int n = array.length;
+
+
+
+        For (int i = 0; i < n – 1; i++) {
+
+            Int minIndex = i;
+
+
+
+            For (int j = i + 1; j < n; j++) {
+
+                If (array[j] < array[minIndex]) {
+
+                    minIndex = j;
+
+                }
+
+            }
+
+
+
+            // Swap the found minimum element with the element at index i
+
+            Int temp = array[minIndex];
+
+            Array[minIndex] = array[i];
+
+            Array[i] = temp;
+
+        }
+
+    }
+
 }
+
